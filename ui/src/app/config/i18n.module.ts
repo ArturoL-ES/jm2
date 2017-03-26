@@ -27,6 +27,6 @@ export class i18nModule {
   }
 }
 
-function createTranslateLoader(http: Http) {
+export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
