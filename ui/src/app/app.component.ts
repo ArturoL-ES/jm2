@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,8 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  appTitle = 'JM2';
   menu: any[] = [
-    {name: 'home', path: 'home', icon: 'home'},
-    {name: 'builds', path: 'builds', icon: 'account-balance'}
+    {name: 'menu.home', path: 'home', icon: 'home'},
+    {name: 'menu.builds', path: 'builds', icon: 'account-balance'}
   ];
 }

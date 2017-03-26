@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "JM2"
+  },
+
+  "menu": {
+    "home": "Inicio",
+    "builds": "Edificios"
+  }
+}

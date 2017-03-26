@@ -1,14 +1,14 @@
 <paper-drawer-panel>
   <paper-header-panel drawer>
     <app-toolbar>
-      <div>{{appTitle}}</div>
+      <div>{{'app.title' | translate}}</div>
     </app-toolbar>
     <div>
       <nav>
         <paper-item *ngFor="let item of menu"
                     routerLink="/{{item.path}}"
                     routerLinkActive="active">
-          <iron-icon icon="{{item.icon}}"></iron-icon>{{item.name}}
+          <iron-icon icon="{{item.icon}}"></iron-icon> {{item.name | translate}}
         </paper-item>
       </nav>
     </div>

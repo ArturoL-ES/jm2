@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AppRouter } from './config/router.module';
 import { HomeComponent } from './home/home.component';
 import { BuildsComponent } from './builds/builds.component';
+import { i18nModule } from "./config/i18n.module";
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { BuildsComponent } from './builds/builds.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRouter
+    AppRouter,
+    i18nModule
   ],
   providers: [],
   bootstrap: [AppComponent],
