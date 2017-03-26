@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
-  menu: any[] = [
+  private menu: Array<{name: string, path: string, icon: string}> = [
     {name: 'menu.home', path: 'home', icon: 'home'},
     {name: 'menu.builds', path: 'builds', icon: 'account-balance'}
   ];
+  private menuSelected: {name: string, path: string, icon: string} = this.menu[0];
 
-  constructor(private router: Router) {
-    router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        let drawer: any = document.querySelector('paper-drawer-panel');
-        drawer.closeDrawer();
-      }
-    });
+  constructor() { }
+
+  public menuClick(item) {
+    this.closeDrawer();
+    this.menuSelected = item;
+  }
+
+  private closeDrawer() {
+    let drawer: any = document.querySelector('paper-drawer-panel');
+    drawer.closeDrawer();
   }
 }

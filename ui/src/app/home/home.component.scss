@@ -5,8 +5,13 @@
   @include shadow-2dp();
   background-color: white;
   border-radius: 2px;
+  min-width: 360px;
 
   app-toolbar {
     border-bottom: 1px solid $gray;
+  }
+
+  span {
+    font-weight: bold;
   }
 }

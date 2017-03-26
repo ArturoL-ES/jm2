@@ -6,5 +6,22 @@
   "menu": {
     "home": "Inicio",
     "builds": "Edificios"
+  },
+
+  "home": {
+    "whoWeAre": {
+      "title": "Quienes somos",
+      "paragraf1": "Somos un grupo de profesionales con una dilatada experiencia inmobiliaria y jurídica.",
+      "paragraf2": "Acompañamos a nuestros clientes durante todo el proceso de compra-venta, alquiler o traspasos de su casa local oficina, nave, terreno rustico etc, asesorándoles y apoyándoles en todos los aspectos inmobiliarios y jurídicos hasta que se concluya la operación.",
+      "paragraf3": "Además también ofrecemos certificaciones energéticas sin intermediarios y con precios muy económicos."
+    },
+    "contact": "Contacto",
+    "localization": "Localización"
+  },
+
+  "common": {
+    "email": "E-mail",
+    "phone": "Teléfono fijo",
+    "mobile": "Teléfono movil"
   }
 }

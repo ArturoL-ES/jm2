@@ -1,33 +1,60 @@
-<div class="panel">
+<section class="layout horizontal wrap">
+  <article margin class="panel flex-12">
+    <app-toolbar>
+      <iron-icon icon="accessibility"></iron-icon>
+      {{'home.whoWeAre.title' | translate}}
+    </app-toolbar>
+    <div padding>
+      <p>
+        {{'home.whoWeAre.paragraf1' | translate}}
+      </p>
+      <p>
+        {{'home.whoWeAre.paragraf2' | translate}}
+      </p>
+      <p>
+        {{'home.whoWeAre.paragraf3' | translate}}
+      </p>
+    </div>
+  </article>
+  <article margin class="panel flex">
+    <app-toolbar>
+      <iron-icon icon="face"></iron-icon>
+      {{'home.contact' | translate}}
+    </app-toolbar>
+    <div padding>
+      <div class="layout vertical">
+        <div>
+          Sector Oficios 6 y 7. Tres Cantos (Madrid).
+        </div>
+        <div>
+          <span>{{'common.email' | translate}}:</span>
+          info@jm2inmobiliaria.es
+        </div>
+        <div>
+          <span>{{'common.phone' | translate}}:</span>
+          91 804 26 25
+        </div>
+        <div>
+          <span>{{'common.mobile' | translate}}:</span>
+          606 45 44 82
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<article margin class="panel">
   <app-toolbar>
-    <iron-icon icon="accessibility"></iron-icon>
-    Who are we?
+    <iron-icon icon="room"></iron-icon>
+    {{'home.localization' | translate}}
   </app-toolbar>
   <div padding>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus pulvinar tellus. Etiam non arcu in neque
-      sodales ultrices. Quisque feugiat dapibus ligula, ut viverra nulla rutrum quis. Donec vel massa dui.
-      Sed quis tempus ligula, non ultricies felis. Aenean congue nec nisi in scelerisque. Etiam tristique facilisis
-      nibh, ut facilisis sapien bibendum pulvinar. Ut at dui eget dui lacinia gravida eu at sapien. Fusce ornare
-      laoreet molestie. Nulla porttitor ante orci, ut convallis ligula condimentum et. Donec mattis tempor erat ac
-      viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-    </p>
-
-    <p>
-      Ut sit amet accumsan mi. Pellentesque placerat leo elit. Vivamus faucibus efficitur euismod. Orci varius natoque
-      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sit amet urna mollis, convallis lectus
-      vel, feugiat est. In hac habitasse platea dictumst. Praesent vel pulvinar enim, et aliquam quam. Nulla aliquam,
-      enim ac pretium tempor, nunc ex ultricies dui, non elementum nisi urna vitae purus. Maecenas semper tellus eget
-      sodales varius. Donec maximus orci et neque tempor faucibus. Praesent libero magna, rhoncus condimentum mi a,
-      ornare luctus sapien. Sed iaculis pellentesque purus, sit amet porta metus auctor ut. Phasellus augue nulla,
-      molestie non sagittis a, imperdiet ut orci. Cras urna nisi, imperdiet dapibus enim ac, euismod lobortis velit.
-      Nulla non dui dictum, luctus tortor vel, porta nisi.
-    </p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12116.203729056087!2d-3.7142955!3d40.6066999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x67a3622a65cc2cd8!2sJM2+Inmobiliaria!5e0!3m2!1ses!2ses!4v1444503787423"
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen>
+    </iframe>
   </div>
-</div>
-
-<div class="layout horizontal">
-  <div>one</div>
-  <div>two (flex)</div>
-  <div>three</div>
-</div>
+</article>
