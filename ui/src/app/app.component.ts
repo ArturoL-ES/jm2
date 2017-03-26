@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
+import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -12,4 +12,13 @@ export class AppComponent {
     {name: 'menu.home', path: 'home', icon: 'home'},
     {name: 'menu.builds', path: 'builds', icon: 'account-balance'}
   ];
+
+  constructor(private router: Router) {
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        let drawer: any = document.querySelector('paper-drawer-panel');
+        drawer.closeDrawer();
+      }
+    });
+  }
 }
