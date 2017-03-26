@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../../styles/shadows';
+
+.panel {
+  @include shadow-2dp();
+  background-color: white;
+  border-radius: 2px;
+
+  app-toolbar {
+    border-bottom: 1px solid $gray;
+  }
+}

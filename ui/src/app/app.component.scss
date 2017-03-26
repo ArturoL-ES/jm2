@@ -1,0 +1,35 @@
+@import '../styles/colors';
+@import '../styles/shadows';
+
+paper-drawer-panel {
+  font-family: 'Roboto', 'Noto', sans-serif;
+
+  & paper-header-panel {
+    &[drawer] {
+      border-right: 1px solid $gray;
+
+      paper-toolbar {
+        color: black;
+        background-color: white;
+      }
+
+      & nav {
+        & paper-item {
+          text-transform: capitalize;
+
+          &.active {
+            background-color: #EEEEEE;
+          }
+        }
+      }
+    }
+
+    &[main] {
+      background-color: $bgApp;
+
+      & paper-toolbar {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

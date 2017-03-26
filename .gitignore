@@ -1,0 +1,36 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+ui/dist
+ui/tmp
+ui/out-tsc
+
+# dependencies
+ui/node_modules
+ui/src/assets/bower_components
+
+# misc
+ui/.sass-cache
+ui/connect.lock
+ui/coverage
+ui/libpeerconnection.log
+ui/npm-debug.log
+ui/testem.log
+ui/typings
+
+# e2e
+ui/e2e/*.js
+ui/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+api/target/
+!api/.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
