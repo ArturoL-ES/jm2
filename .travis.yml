@@ -6,7 +6,7 @@ addons:
   sonarqube:
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+  - cd api && mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
   
 cache:
   directories:
