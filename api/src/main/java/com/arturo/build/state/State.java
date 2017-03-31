@@ -1,4 +1,4 @@
-package com.arturo.build.model;
+package com.arturo.build.state;
 
 import java.io.Serializable;
 
@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "types")
-public class Type implements Serializable {
-	
+@Table(name = "states")
+public class State implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -23,7 +23,7 @@ public class Type implements Serializable {
 	@Column(name = "value", nullable = false, length = 16)
 	private String value;
 	
-	public Type() { }
+	public State() { }
 
 	public Integer getId() {
 		return id;
@@ -58,7 +58,7 @@ public class Type implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Type other = (Type) obj;
+		State other = (State) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -74,7 +74,7 @@ public class Type implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Type [id=" + id + ", value=" + value + "]";
+		return "State [id=" + id + ", value=" + value + "]";
 	}
-
+	
 }

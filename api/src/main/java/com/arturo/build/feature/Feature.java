@@ -1,4 +1,4 @@
-package com.arturo.build.model;
+package com.arturo.build.feature;
 
 import java.io.Serializable;
 import java.util.Set;

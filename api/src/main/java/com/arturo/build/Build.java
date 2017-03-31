@@ -21,11 +21,11 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import com.arturo.build.model.Equipment;
-import com.arturo.build.model.Feature;
-import com.arturo.build.model.Image;
-import com.arturo.build.model.State;
-import com.arturo.build.model.Type;
+import com.arturo.build.equipment.Equipment;
+import com.arturo.build.feature.Feature;
+import com.arturo.build.image.Image;
+import com.arturo.build.state.State;
+import com.arturo.build.type.Type;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity

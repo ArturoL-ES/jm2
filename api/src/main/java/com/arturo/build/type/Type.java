@@ -1,85 +1,46 @@
-package com.arturo.build.model;
+package com.arturo.build.type;
 
 import java.io.Serializable;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.arturo.build.Build;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 @Entity
-@Table(name = "equipments")
-public class Equipment implements Serializable {
-
+@Table(name = "types")
+public class Type implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@Column(name = "id", nullable = false)
 	private Integer id;
 	
-	@Column(name = "value")
+	@Column(name = "value", nullable = false, length = 16)
 	private String value;
 	
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "equipments")
-    @JsonBackReference
-	private Set<Build> builds;
-	
-	public Equipment() { }
+	public Type() { }
 
-	/**
-	 * @return the id
-	 */
 	public Integer getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the value
-	 */
 	public String getValue() {
 		return value;
 	}
 
-	/**
-	 * @param value the value to set
-	 */
 	public void setValue(String value) {
 		this.value = value;
 	}
 
-	/**
-	 * @return the builds
-	 */
-	public Set<Build> getBuilds() {
-		return builds;
-	}
-
-	/**
-	 * @param builds the builds to set
-	 */
-	public void setBuilds(Set<Build> builds) {
-		this.builds = builds;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -89,9 +50,6 @@ public class Equipment implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -100,7 +58,7 @@ public class Equipment implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Equipment other = (Equipment) obj;
+		Type other = (Type) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -114,12 +72,9 @@ public class Equipment implements Serializable {
 		return true;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "Equipment [id=" + id + ", value=" + value + "]";
+		return "Type [id=" + id + ", value=" + value + "]";
 	}
-	
+
 }

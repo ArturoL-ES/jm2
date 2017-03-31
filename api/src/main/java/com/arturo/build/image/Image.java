@@ -1,4 +1,4 @@
-package com.arturo.build.model;
+package com.arturo.build.image;
 
 import java.io.Serializable;
 

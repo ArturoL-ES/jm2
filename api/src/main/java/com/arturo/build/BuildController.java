@@ -23,14 +23,12 @@ public class BuildController {
     public Page<Build> list(
             @ModelAttribute Build build,
             @PageableDefault(value = 10, page = 0) Pageable page) {
-        Page<Build> builds = buildService.findBuilds(build, page);
-        return builds;
+        return buildService.findBuilds(build, page);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Build get(@PathVariable Long id) {
-        Build build = buildService.findBuild(id);
-        return build;
+        return buildService.findBuild(id);
     }
     
     @RequestMapping(value = "", method = RequestMethod.PUT)
