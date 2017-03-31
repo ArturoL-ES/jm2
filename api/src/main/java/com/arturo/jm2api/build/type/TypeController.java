@@ -1,4 +1,4 @@
-package com.arturo.build.type;
+package com.arturo.jm2api.build.type;
 
 import java.util.List;
 

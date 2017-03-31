@@ -1,4 +1,4 @@
-package com.arturo.build.equipment;
+package com.arturo.jm2api.build.equipment;
 
 import java.util.List;
 

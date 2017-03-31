@@ -1,4 +1,4 @@
-package com.arturo.common.error;
+package com.arturo.jm2api.common.error;
 
 import org.springframework.http.HttpStatus;
 

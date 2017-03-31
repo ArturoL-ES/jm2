@@ -1,4 +1,4 @@
-package com.arturo.build;
+package com.arturo.jm2api.build;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

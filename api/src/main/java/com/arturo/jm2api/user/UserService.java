@@ -1,4 +1,4 @@
-package com.arturo.user;
+package com.arturo.jm2api.user;
 
 public interface UserService {
     

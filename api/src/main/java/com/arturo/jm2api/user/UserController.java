@@ -1,6 +1,4 @@
-package com.arturo.user;
-
-import java.security.Principal;
+package com.arturo.jm2api.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;

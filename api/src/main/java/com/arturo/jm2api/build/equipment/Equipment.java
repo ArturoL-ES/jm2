@@ -1,4 +1,4 @@
-package com.arturo.build.equipment;
+package com.arturo.jm2api.build.equipment;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.arturo.build.Build;
+import com.arturo.jm2api.build.Build;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity

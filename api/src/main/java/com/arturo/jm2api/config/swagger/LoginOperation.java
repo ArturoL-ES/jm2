@@ -1,4 +1,4 @@
-package com.arturo.config.swagger;
+package com.arturo.jm2api.config.swagger;
 
 import java.util.ArrayList;
 import java.util.Arrays;

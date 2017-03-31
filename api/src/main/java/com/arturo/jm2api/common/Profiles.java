@@ -1,4 +1,4 @@
-package com.arturo.common;
+package com.arturo.jm2api.common;
 
 public class Profiles {
     

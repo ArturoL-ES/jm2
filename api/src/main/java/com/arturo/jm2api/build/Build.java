@@ -1,4 +1,4 @@
-package com.arturo.build;
+package com.arturo.jm2api.build;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -21,11 +21,11 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import com.arturo.build.equipment.Equipment;
-import com.arturo.build.feature.Feature;
-import com.arturo.build.image.Image;
-import com.arturo.build.state.State;
-import com.arturo.build.type.Type;
+import com.arturo.jm2api.build.equipment.Equipment;
+import com.arturo.jm2api.build.feature.Feature;
+import com.arturo.jm2api.build.image.Image;
+import com.arturo.jm2api.build.state.State;
+import com.arturo.jm2api.build.type.Type;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity

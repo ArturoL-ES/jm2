@@ -1,4 +1,4 @@
-package com.arturo.build;
+package com.arturo.jm2api.build;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

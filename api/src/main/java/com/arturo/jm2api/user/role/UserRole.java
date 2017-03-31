@@ -1,4 +1,4 @@
-package com.arturo.user.role;
+package com.arturo.jm2api.user.role;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.arturo.user.User;
+import com.arturo.jm2api.user.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity

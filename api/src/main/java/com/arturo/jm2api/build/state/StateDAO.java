@@ -1,4 +1,4 @@
-package com.arturo.build.state;
+package com.arturo.jm2api.build.state;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

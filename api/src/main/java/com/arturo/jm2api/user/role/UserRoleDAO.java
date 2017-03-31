@@ -1,4 +1,4 @@
-package com.arturo.user.role;
+package com.arturo.jm2api.user.role;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

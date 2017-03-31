@@ -1,4 +1,4 @@
-package com.arturo.config.security;
+package com.arturo.jm2api.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,7 +18,7 @@ import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 
-import com.arturo.common.Profiles;
+import com.arturo.jm2api.common.Profiles;
 
 @Configuration
 @EnableGlobalMethodSecurity

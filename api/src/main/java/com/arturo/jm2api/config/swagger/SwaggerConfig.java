@@ -1,11 +1,11 @@
-package com.arturo.config.swagger;
+package com.arturo.jm2api.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
-import com.arturo.common.Profiles;
+import com.arturo.jm2api.common.Profiles;
 
 import springfox.documentation.builders.LoginEndpointBuilder;
 import springfox.documentation.service.LoginEndpoint;

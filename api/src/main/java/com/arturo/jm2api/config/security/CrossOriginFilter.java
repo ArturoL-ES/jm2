@@ -1,4 +1,4 @@
-package com.arturo.config.security;
+package com.arturo.jm2api.config.security;
 
 import org.springframework.stereotype.Component;
 
