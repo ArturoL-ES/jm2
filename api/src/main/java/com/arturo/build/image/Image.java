@@ -59,33 +59,6 @@ public class Image implements Serializable {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Image other = (Image) obj;
-		if (build == null) {
-			if (other.build != null)
-				return false;
-		} else if (!build.equals(other.build))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (path == null) {
-			if (other.path != null)
-				return false;
-		} else if (!path.equals(other.path))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
 		return "Image [id=" + id + ", build=" + build + ", path=" + path + "]";
 	}
