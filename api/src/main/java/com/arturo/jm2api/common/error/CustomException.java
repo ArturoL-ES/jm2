@@ -6,8 +6,8 @@ public class CustomException extends RuntimeException {
     
     private static final long serialVersionUID = 1L;
     
-    private HttpStatus status;
-    private String message;
+    private final HttpStatus status;
+    private final String message;
     
     public CustomException(HttpStatus status, String message) {
         super(message);
@@ -18,7 +18,8 @@ public class CustomException extends RuntimeException {
     public HttpStatus getStatus() {
         return status;    
     }
-    
+
+    @Override
     public String getMessage() {
         return message;    
     }

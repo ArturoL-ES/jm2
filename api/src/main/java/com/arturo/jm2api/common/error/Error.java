@@ -8,8 +8,6 @@ public class Error {
     private String message;
     private Long timestamp;
     
-    public Error() { }
-    
     public static Error errorGeneric() {
         Error error = new Error();
         error.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
