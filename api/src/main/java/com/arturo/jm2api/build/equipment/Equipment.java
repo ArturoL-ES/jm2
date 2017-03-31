@@ -1,6 +1,7 @@
 package com.arturo.jm2api.build.equipment;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -23,44 +24,42 @@ public class Equipment implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private Integer id;
+	@Column(name = "idEquipment")
+	private Integer idEquipment;
 	
-	@Column(name = "value")
-	private String value;
+	@Column(name = "valueEquiment")
+	private String valueEquiment;
 	
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "equipments")
     @JsonBackReference
-	private Set<Build> builds;
-	
-	public Equipment() { }
+	private Set<Build> builds = new HashSet<>();
 
 	/**
-	 * @return the id
+	 * @return the idEquipment
 	 */
-	public Integer getId() {
-		return id;
+	public Integer getIdEquipment() {
+		return idEquipment;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param idEquipment the idEquipment to set
 	 */
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdEquipment(Integer idEquipment) {
+		this.idEquipment = idEquipment;
 	}
 
 	/**
-	 * @return the value
+	 * @return the valueEquiment
 	 */
-	public String getValue() {
-		return value;
+	public String getValueEquiment() {
+		return valueEquiment;
 	}
 
 	/**
-	 * @param value the value to set
+	 * @param valueEquiment the valueEquiment to set
 	 */
-	public void setValue(String value) {
-		this.value = value;
+	public void setValueEquiment(String valueEquiment) {
+		this.valueEquiment = valueEquiment;
 	}
 
 	/**
@@ -75,51 +74,6 @@ public class Equipment implements Serializable {
 	 */
 	public void setBuilds(Set<Build> builds) {
 		this.builds = builds;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
-		return result;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Equipment other = (Equipment) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (value == null) {
-			if (other.value != null)
-				return false;
-		} else if (!value.equals(other.value))
-			return false;
-		return true;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Equipment [id=" + id + ", value=" + value + "]";
 	}
 	
 }

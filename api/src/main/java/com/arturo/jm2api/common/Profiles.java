@@ -2,9 +2,9 @@ package com.arturo.jm2api.common;
 
 public class Profiles {
     
-    public final static String DEVEVELOPMENT = "development";
-    public final static String PRODUCTION = "production";
-    public final static String SWAGGER = "swagger";
+    public static final String DEVEVELOPMENT = "development";
+    public static final String PRODUCTION = "production";
+    public static final String SWAGGER = "swagger";
 
     private Profiles() {
         throw new IllegalAccessError("Utility class");

@@ -74,11 +74,6 @@ public class BuildTest {
         build.setIdentifier(identifier);
     }
 
-    @After
-    public void tearDown() throws Exception {
-
-    }
-
     @Test
     public void getId() throws Exception {
         assertEquals(id, build.getId());

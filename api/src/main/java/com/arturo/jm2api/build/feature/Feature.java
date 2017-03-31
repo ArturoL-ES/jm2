@@ -23,11 +23,11 @@ public class Feature implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private Integer id;
+	@Column(name = "idFeature")
+	private Integer idFeature;
 	
-	@Column(name = "value")
-	private String value;
+	@Column(name = "valueFeature")
+	private String valueFeature;
 	
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "features")
     @JsonBackReference
@@ -36,31 +36,31 @@ public class Feature implements Serializable {
 	public Feature() { }
 
 	/**
-	 * @return the id
+	 * @return the idFeature
 	 */
-	public Integer getId() {
-		return id;
+	public Integer getIdFeature() {
+		return idFeature;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param idFeature the idFeature to set
 	 */
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdFeature(Integer idFeature) {
+		this.idFeature = idFeature;
 	}
 
 	/**
-	 * @return the value
+	 * @return the valueFeature
 	 */
-	public String getValue() {
-		return value;
+	public String getValueFeature() {
+		return valueFeature;
 	}
 
 	/**
-	 * @param value the value to set
+	 * @param valueFeature the valueFeature to set
 	 */
-	public void setValue(String value) {
-		this.value = value;
+	public void setValueFeature(String valueFeature) {
+		this.valueFeature = valueFeature;
 	}
 
 	/**
@@ -75,51 +75,6 @@ public class Feature implements Serializable {
 	 */
 	public void setBuilds(Set<Build> builds) {
 		this.builds = builds;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
-		return result;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Feature other = (Feature) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (value == null) {
-			if (other.value != null)
-				return false;
-		} else if (!value.equals(other.value))
-			return false;
-		return true;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Feature [id=" + id + ", value=" + value + "]";
 	}
 
 }
