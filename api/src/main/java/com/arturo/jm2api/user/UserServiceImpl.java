@@ -78,9 +78,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	    if (CollectionUtils.isEmpty(user.getRoles())) {
 	       userSaved.getRoles().add(userRoleService.saveDefaultRole(user));
 	    } else {
-	        user.getRoles().forEach(role -> {
-	            userSaved.getRoles().add(role);
-	        });
+	        user.getRoles().forEach(role -> userSaved.getRoles().add(role) );
 	        // TODO: save roles
 	    }
 	    

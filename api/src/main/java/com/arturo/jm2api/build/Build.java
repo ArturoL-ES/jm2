@@ -1,6 +1,7 @@
 package com.arturo.jm2api.build;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Cacheable;
@@ -70,7 +71,7 @@ public class Build implements Serializable {
 			{ @JoinColumn(name = "feature_id", nullable = false, updatable = false) }
 	)
 	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-	private Set<Feature> features;
+	private Set<Feature> features = new HashSet<>();
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "build_equipments", joinColumns = 
@@ -80,11 +81,11 @@ public class Build implements Serializable {
 	)
 	@JsonManagedReference
 	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-	private Set<Equipment> equipments;
+	private Set<Equipment> equipments = new HashSet<>();
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "build")
 	//@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-	private Set<Image> images;
+	private Set<Image> images = new HashSet<>();
 	
 	@Column(name = "identifier", nullable = false, length = 100)
 	private String identifier;
@@ -185,104 +186,6 @@ public class Build implements Serializable {
 
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((ccaa == null) ? 0 : ccaa.hashCode());
-		result = prime * result + ((city == null) ? 0 : city.hashCode());
-		result = prime * result + ((currency == null) ? 0 : currency.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((equipments == null) ? 0 : equipments.hashCode());
-		result = prime * result + ((features == null) ? 0 : features.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((identifier == null) ? 0 : identifier.hashCode());
-		result = prime * result + ((images == null) ? 0 : images.hashCode());
-		result = prime * result + ((price == null) ? 0 : price.hashCode());
-		result = prime * result + ((state == null) ? 0 : state.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Build other = (Build) obj;
-		if (ccaa == null) {
-			if (other.ccaa != null)
-				return false;
-		} else if (!ccaa.equals(other.ccaa))
-			return false;
-		if (city == null) {
-			if (other.city != null)
-				return false;
-		} else if (!city.equals(other.city))
-			return false;
-		if (currency == null) {
-			if (other.currency != null)
-				return false;
-		} else if (!currency.equals(other.currency))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (equipments == null) {
-			if (other.equipments != null)
-				return false;
-		} else if (!equipments.equals(other.equipments))
-			return false;
-		if (features == null) {
-			if (other.features != null)
-				return false;
-		} else if (!features.equals(other.features))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (identifier == null) {
-			if (other.identifier != null)
-				return false;
-		} else if (!identifier.equals(other.identifier))
-			return false;
-		if (images == null) {
-			if (other.images != null)
-				return false;
-		} else if (!images.equals(other.images))
-			return false;
-		if (price == null) {
-			if (other.price != null)
-				return false;
-		} else if (!price.equals(other.price))
-			return false;
-		if (state == null) {
-			if (other.state != null)
-				return false;
-		} else if (!state.equals(other.state))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Build [id=" + id + ", price=" + price + ", currency=" + currency + ", description=" + description
-				+ ", state=" + state + ", type=" + type + ", ccaa=" + ccaa + ", city=" + city + ", features=" + features
-				+ ", equipments=" + equipments + ", images=" + images + ", identifier=" + identifier + "]";
 	}
 	
 }

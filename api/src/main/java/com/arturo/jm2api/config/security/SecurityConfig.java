@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,7 +22,7 @@ import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import com.arturo.jm2api.common.Profiles;
 
 @Configuration
-@EnableGlobalMethodSecurity
+@EnableWebSecurity
 @Profile({Profiles.DEVEVELOPMENT})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
