@@ -2,6 +2,7 @@ package com.arturo.user;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import com.arturo.common.error.CustomException;
 import com.arturo.user.role.UserRoleService;
 
 @Service("userService")
@@ -61,28 +63,36 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Override
 	public User saveUser(User user) {
 	    if (StringUtils.isBlank(user.getUsername())) {
-	       return null;
+	       // TODO set message
+	       throw new CustomException(HttpStatus.BAD_REQUEST, "ErrorMessage.Required.ID");
 	    }
 	    
 	    if (userDAO.findOne(user.getUsername()) != null) {
-	       return null;
+	       // TODO set message
+	       throw new CustomException(HttpStatus.BAD_REQUEST, "ErrorMessage.NotFound.USERNAME");
 	    }
 	    
 	    user.setPassword(passwordEncoder.encode(user.getPassword()));
-	    user = userDAO.save(user);
+	    User userSaved = userDAO.save(user);
 	    
 	    if (CollectionUtils.isEmpty(user.getRoles())) {
-	       user.getRoles().add(userRoleService.saveDefaultRole(user));
+	       userSaved.getRoles().add(userRoleService.saveDefaultRole(user));
+	    } else {
+	        user.getRoles().forEach(role -> {
+	            userSaved.getRoles().add(role);
+	        });
+	        // TODO: save roles
 	    }
 	    
-	    return user;
+	    return userSaved;
 	}
 	
 	@Transactional
 	@Override
 	public User updateUser(User user) {
 	    if (StringUtils.isNotBlank(user.getUsername())) {
-	       return null;
+	       // TODO set message
+	       throw new CustomException(HttpStatus.BAD_REQUEST, "ErrorMessage.Required.ID");
 	    }
 	    
 	    return userDAO.save(user);
