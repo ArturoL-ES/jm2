@@ -27,7 +27,10 @@ ui/e2e/*.map
 Thumbs.db
 
 api/target/
-!api/.mvn/wrapper/maven-wrapper.jar
+api/.mvn/
+api/mvnw
+api/mvnw.cmd
+
 
 ### IntelliJ IDEA ###
 .idea

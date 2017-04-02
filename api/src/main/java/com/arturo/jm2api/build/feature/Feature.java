@@ -32,8 +32,6 @@ public class Feature implements Serializable {
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "features")
     @JsonBackReference
 	private Set<Build> builds;
-	
-	public Feature() { }
 
 	/**
 	 * @return the idFeature

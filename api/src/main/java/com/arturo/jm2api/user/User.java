@@ -41,7 +41,7 @@ public class User implements UserDetails {
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	@JsonManagedReference
-	private Set<UserRole> roles = new HashSet<UserRole>(0);
+	private Set<UserRole> roles = new HashSet<>(0);
 	
 	@Column
 	private Boolean accountNonLocked;
