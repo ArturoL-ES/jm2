@@ -1,6 +1,7 @@
 package com.arturo.jm2api.common.error;
 
 import com.arturo.jm2api.common.Profiles;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -73,6 +74,11 @@ public class ErrorTest {
         error.setTimestamp(System.currentTimeMillis());
 
         assertNotNull(error.getTimestamp());
+    }
+
+    @Test
+    public void testEquals() {
+        EqualsVerifier.forClass(Error.class);
     }
 
 }

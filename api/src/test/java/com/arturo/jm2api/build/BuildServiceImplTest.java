@@ -53,16 +53,22 @@ public class BuildServiceImplTest {
         fail();
     }
 
-    @Test(expected = CustomException.class)
+    @Test()
     public void saveBuild() throws Exception {
         Build buildWithId = new Build();
-        build.setId(1L);
+        buildWithId.setId(1L);
 
         Mockito.when(buildDAO.save(build)).thenReturn(build);
 
+        try {
+
+            buildService.saveBuild(buildWithId);
+            fail();
+        } catch (CustomException ce) {
+
+        }
+
         assertEquals(build, buildService.saveBuild(build));
-        buildService.saveBuild(buildWithId);
-        fail();
     }
 
 }
