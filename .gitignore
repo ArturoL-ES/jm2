@@ -6,6 +6,7 @@ ui/tmp
 ui/out-tsc
 
 # dependencies
+ui/node
 ui/node_modules
 ui/src/assets/bower_components
 
@@ -30,6 +31,7 @@ api/target/
 api/.mvn/
 api/mvnw
 api/mvnw.cmd
+api/src/main/resources/static
 
 
 ### IntelliJ IDEA ###

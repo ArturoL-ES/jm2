@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-maven": "ng build --environment=prod --output-path=../api/src/main/resources/static"
   },
   "private": true,
   "dependencies": {
