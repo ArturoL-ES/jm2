@@ -22,8 +22,8 @@ public class Image implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false)
-	private Integer id;
+	@Column(name = "idImage", nullable = false)
+	private Integer idImage;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "build_id")
@@ -31,15 +31,13 @@ public class Image implements Serializable {
 	
 	@Column(name = "path", nullable = false, length = 60)
 	private String path;
-	
-	public Image() { }
 
-	public Integer getId() {
-		return id;
+	public Integer getIdImage() {
+		return idImage;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdImage(Integer idImage) {
+		this.idImage = idImage;
 	}
 
 	public Build getBuild() {
@@ -56,11 +54,6 @@ public class Image implements Serializable {
 
 	public void setPath(String path) {
 		this.path = path;
-	}
-
-	@Override
-	public String toString() {
-		return "Image [id=" + id + ", build=" + build + ", path=" + path + "]";
 	}
 
 }

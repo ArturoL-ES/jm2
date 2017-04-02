@@ -9,11 +9,16 @@ import com.arturo.jm2api.user.User;
 public class UserRoleServiceImpl implements UserRoleService {
     
     @Autowired private UserRoleDAO userRoleDAO;
+
+    @Override
+    public UserRole save(UserRole userRole) {
+        return userRoleDAO.save(userRole);
+    }
     
     @Override
     public UserRole saveDefaultRole(User user) {
         UserRole userRole = new UserRole();
-        userRole.setRole(Roles.USER);
+        userRole.setRole(Roles.DEFAULT);
         userRole.setUser(user);
         return userRoleDAO.save(userRole);
     }

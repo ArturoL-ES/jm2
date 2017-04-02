@@ -6,7 +6,6 @@ import com.arturo.jm2api.build.image.Image;
 import com.arturo.jm2api.build.state.State;
 import com.arturo.jm2api.build.type.Type;
 import com.arturo.jm2api.common.Profiles;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,13 +46,13 @@ public class BuildTest {
         build.setDescription(descripcion);
 
         state = new State();
-        state.setId(1);
-        state.setValue("TEST_STATE");
+        state.setIdState(1);
+        state.setValueState("TEST_STATE");
         build.setState(state);
 
         type = new Type();
-        type.setId(1);
-        type.setValue("TEST_TYPE");
+        type.setIdType(1);
+        type.setValueType("TEST_TYPE");
         build.setType(type);
 
         build.setCcaa(ccaa);
@@ -134,8 +133,8 @@ public class BuildTest {
     @Test
     public void setState() throws Exception {
         State state = new State();
-        state.setId(2);
-        state.setValue("NEW_STATE");
+        state.setIdState(2);
+        state.setValueState("NEW_STATE");
         build.setState(state);
 
         assertEquals(state, build.getState());
@@ -149,8 +148,8 @@ public class BuildTest {
     @Test
     public void setType() throws Exception {
         Type type = new Type();
-        type.setId(2);
-        type.setValue("NEW_TYPE");
+        type.setIdType(2);
+        type.setValueType("NEW_TYPE");
         build.setType(type);
 
         assertEquals(type, build.getType());

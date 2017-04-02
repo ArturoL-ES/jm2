@@ -89,8 +89,6 @@ public class Build implements Serializable {
 	
 	@Column(name = "identifier", nullable = false, length = 100)
 	private String identifier;
-	
-	public Build() { }
 
 	public Long getId() {
 		return id;

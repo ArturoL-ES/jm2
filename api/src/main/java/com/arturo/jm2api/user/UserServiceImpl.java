@@ -33,17 +33,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		    throw new UsernameNotFoundException("Bad credentials");
 		}
 		
-		UserDetails userDetails = 
-		  new org.springframework.security.core.userdetails
-		          .User(user.getUsername(), 
-    		              user.getPassword(), 
-    		              user.isEnabled(), 
-    		              user.isAccountNonExpired(), 
-    		              user.isCredentialsNonExpired(), 
-    		              user.isAccountNonLocked(), 
-    		              user.getAuthorities());
-		
-		return userDetails;
+		return user;
 	}
 	
 	@Transactional(readOnly = true)
@@ -78,8 +68,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	    if (CollectionUtils.isEmpty(user.getRoles())) {
 	       userSaved.getRoles().add(userRoleService.saveDefaultRole(user));
 	    } else {
-	        user.getRoles().forEach(role -> userSaved.getRoles().add(role) );
-	        // TODO: save roles
+	        user.getRoles().forEach(role -> {
+	        	userRoleService.save(role);
+	        	userSaved.getRoles().add(role);
+			} );
 	    }
 	    
 	    return userSaved;

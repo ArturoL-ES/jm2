@@ -17,64 +17,26 @@ public class State implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false)
-	private Integer id;
+	@Column(name = "idState", nullable = false)
+	private Integer idState;
 	
-	@Column(name = "value", nullable = false, length = 16)
-	private String value;
-	
-	public State() { }
+	@Column(name = "valueState", nullable = false, length = 16)
+	private String valueState;
 
-	public Integer getId() {
-		return id;
+	public Integer getIdState() {
+		return idState;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdState(Integer idState) {
+		this.idState = idState;
 	}
 
-	public String getValue() {
-		return value;
+	public String getValueState() {
+		return valueState;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		State other = (State) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (value == null) {
-			if (other.value != null)
-				return false;
-		} else if (!value.equals(other.value))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "State [id=" + id + ", value=" + value + "]";
+	public void setValueState(String valueState) {
+		this.valueState = valueState;
 	}
 	
 }

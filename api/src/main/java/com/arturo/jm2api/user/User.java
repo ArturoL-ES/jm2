@@ -51,8 +51,6 @@ public class User implements UserDetails {
 	
 	@Column
 	private Boolean accountNonExpired;
-	
-	public User() {	}
     
     @Override
 	public String getUsername() {
@@ -93,7 +91,7 @@ public class User implements UserDetails {
 	@Transient
 	@JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<String> autorizaciones = new ArrayList<String>();
+        List<String> autorizaciones = new ArrayList<>();
         this.roles.forEach(role -> autorizaciones.add(role.getRole()));
         return AuthorityUtils.createAuthorityList(autorizaciones.toArray(new String[0]));
     }
