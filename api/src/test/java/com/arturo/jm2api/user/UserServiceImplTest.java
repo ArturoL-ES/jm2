@@ -61,12 +61,13 @@ public class UserServiceImplTest {
     public void deleteUser() throws Exception {
         User user = new User();
         String exists = "EXISTS";
-        String notExists = "NOT_EXISTS";
+        String notExists = "notExists";
 
         Mockito.when(userDAO.findOne(exists)).thenReturn(user);
+        Mockito.when(userDAO.findOne(notExists)).thenReturn(null);
 
-        assertEquals(null, userDAO.findOne(notExists));
-        assertEquals(user, userDAO.findOne(exists));
+        assertEquals(Boolean.FALSE, userService.deleteUser(exists));
+        assertEquals(Boolean.TRUE, userService.deleteUser(notExists));
     }
 
     @Test
@@ -74,7 +75,6 @@ public class UserServiceImplTest {
         User user = new User();
         String exists = "EXISTS";
         String notExists = "NOT_EXISTS";
-        String password = "123456";
 
         Mockito.when(userDAO.findOne(exists)).thenReturn(user);
         Mockito.when(userDAO.save(user)).thenReturn(user);
@@ -95,12 +95,11 @@ public class UserServiceImplTest {
 
         }
 
-        // TODO: TEST PASWORD ENCODE
-
         user.setUsername(notExists);
         assertEquals(user, userService.saveUser(user));
 
-        // ¿Se deberia probar que se añaden roles ?
+        user.setRoles(new HashSet<>(Arrays.asList(new UserRole(), new UserRole())));
+        assertEquals(user, userService.saveUser(user));
     }
 
     @Test(expected = CustomException.class)
