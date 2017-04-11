@@ -40,5 +40,10 @@ public class BuildController {
     public Build save(@ModelAttribute Build build) {
         return buildService.saveBuild(build);
     }
+    
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable Long id) {
+    	buildService.deleteBuild(id);
+    }
 
 }

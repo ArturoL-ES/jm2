@@ -15,5 +15,7 @@ public interface BuildService {
     public Build updateBuild(Build build);
     
     public Build saveBuild(Build build);
+    
+    public void deleteBuild(Long id);
 
 }

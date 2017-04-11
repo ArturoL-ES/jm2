@@ -1,7 +1,9 @@
 package com.arturo.jm2api.build;
 
-import com.arturo.jm2api.common.Profiles;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -14,9 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.util.Arrays;
-
-import static org.junit.Assert.assertEquals;
+import com.arturo.jm2api.common.Profiles;
 
 @RunWith(MockitoJUnitRunner.class)
 @ActiveProfiles(Profiles.DEVEVELOPMENT)
@@ -55,6 +55,12 @@ public class BuildControllerTest {
         Mockito.when(buildService.saveBuild(build)).thenReturn(build);
 
         assertEquals(build, buildController.save(build));
+    }
+    
+    
+    @Test
+    public void delete() throws Exception {
+    	buildService.deleteBuild(1L);
     }
 
 }
