@@ -1,13 +1,13 @@
+import { BuildsListComponent } from '../builds/builds-list/builds-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from '../home/home.component';
-import { BuildsComponent } from '../builds/builds.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'builds', component: BuildsComponent }
+  { path: 'builds', component: BuildsListComponent }
 ];
 
 @NgModule({

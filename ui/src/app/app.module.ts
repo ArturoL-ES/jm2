@@ -4,25 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { AppRouter } from './config/router.module';
+import { BuildsModule } from './builds/builds.module';
 import { HomeComponent } from './home/home.component';
-import { BuildsComponent } from './builds/builds.component';
-import { i18nModule } from "./config/i18n.module";
+import { ConfigModule } from './config/config.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    BuildsComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRouter,
-    i18nModule
+    ConfigModule,
+    BuildsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
