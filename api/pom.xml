@@ -6,7 +6,6 @@
 	<groupId>com.arturo</groupId>
 	<artifactId>jm2-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>jm2-api</name>
 	<description>JM2 application.</description>
