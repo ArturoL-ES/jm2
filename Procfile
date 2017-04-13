@@ -1,1 +1,1 @@
-web: java -Drun.profiles=development -Dserver.port=$PORT -jar api/target/*.jar
+web: java -Dserver.port=$PORT -jar api/target/*.jar
