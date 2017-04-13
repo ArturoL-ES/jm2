@@ -1,1 +1,1 @@
-web: sh -c 'cd ./directory/ && exec java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war'
+web: sh -c 'cd api && mvn spring-boot:run -Drun.profiles=development'
